@@ -13,6 +13,7 @@ import logging
 from flask import current_app
 from flask_babelplus import lazy_gettext as _
 from flask_wtf import FlaskForm
+from flask_wtf.form import _Auto
 from wtforms import (BooleanField, SelectMultipleField, StringField,
                      SubmitField, TextAreaField)
 from wtforms.validators import DataRequired, Length, Optional
@@ -106,13 +107,16 @@ class TopicForm(FlaskForm):
 
 
 ###################################################################
-# CoRise TODO: create the SpecialTopicForm class below
+# CoRise TODO done: create the SpecialTopicForm class below
 # Hint: TopicForm objects have `title` and `content` attributes. Can
 # you modify them?
 
 class SpecialTopicForm(TopicForm):
-    # ADD CODE HERE
-    pass
+    
+    def __init__(self):
+        TopicForm.title = "Title"
+        TopicForm.content = "content"
+        print("Initialized")
 
 ###################################################################
 

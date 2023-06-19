@@ -1,5 +1,6 @@
 import pytest
 from playwright.sync_api import Page
+from flaskbb.utils.translations import compile_translations
 
 ###################################################################
 # CoRise TODO: add a new fixture `translations` that calls the
