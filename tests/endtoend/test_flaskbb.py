@@ -3,10 +3,14 @@ from playwright.sync_api import Page
 from flaskbb.utils.translations import compile_translations
 
 ###################################################################
-# CoRise TODO: add a new fixture `translations` that calls the
+# CoRise TODO done: add a new fixture `translations` that calls the
 # `compile_translations` function from flaskbb.utils.translations
 
 # ADD CODE HERE
+@pytest.fixture
+def translations():
+    return compile_translations()
+
 
 @pytest.fixture
 def app():

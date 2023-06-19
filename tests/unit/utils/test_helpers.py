@@ -19,7 +19,7 @@ from flaskbb.utils.helpers import (
 from flaskbb.utils.settings import flaskbb_config
 
 ###################################################################
-# CoRise TODO: add unit tests below that test the functionality of:
+# CoRise TODO done: add unit tests below that test the functionality of:
 # - to_bytes
 # - to_unicode
 # - redirect_url
