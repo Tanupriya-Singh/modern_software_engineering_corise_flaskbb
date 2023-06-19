@@ -52,6 +52,7 @@ def to_bytes(text, encoding="utf-8"):
     """Transform string to bytes."""
     if isinstance(text, str):
         text = text.encode(encoding)
+    logger.info(f"Encoding:{text}")
     return text
 
 
@@ -80,7 +81,7 @@ def slugify(text, delim=u"-"):
 def redirect_url(endpoint, use_referrer=True):
     """Generates a redirect url based on the referrer or endpoint."""
     targets = [endpoint]
-    allowed_hosts = current_app.config["ALLOWED_HOSTS"]
+    allowed_hosts = current_app.config["ALLOWED_HOSTS"] #ALLOWED_HOTS is set to None in the config
     if use_referrer:
         targets.insert(0, request.referrer)
     for target in targets:
