@@ -12,6 +12,9 @@ from flaskbb.utils.helpers import (
     slugify,
     time_utcnow,
     topic_is_unread,
+    to_bytes,
+    to_unicode,
+    redirect_url
 )
 from flaskbb.utils.settings import flaskbb_config
 
@@ -26,6 +29,24 @@ from flaskbb.utils.settings import flaskbb_config
 # ADD CODE HERE
 
 ###################################################################
+
+def test_to_bytes():
+    """Test the string to bytes method"""
+
+    # Test for another datatype
+    assert to_bytes(10) == 10
+    assert to_bytes("abc") == b'abc'
+
+def test_to_unicode():
+    """Test the unicode method"""
+    assert to_bytes(10) == 10
+    assert to_unicode("abc") == "abc" # In python, strings are unicode by default
+
+
+def test_redirect_url(application):
+    # Without referer variable, no http call executed
+    assert redirect_url("http://test.com", use_referrer=False) == None
+
 
 def test_slugify():
     """Test the slugify helper method."""
