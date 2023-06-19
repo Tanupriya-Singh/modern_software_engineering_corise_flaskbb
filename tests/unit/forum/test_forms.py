@@ -4,7 +4,7 @@ from unittest.mock import patch
 pytestmark = pytest.mark.usefixtures("post_request_context", "default_settings")
 
 ###################################################################
-# CoRise TODO: add unit tests below that test the functionality of
+# CoRise TODO done: add unit tests below that test the functionality of
 # the `SpecialTopicForm`
 
 class TestSpecialTopicForm(object):

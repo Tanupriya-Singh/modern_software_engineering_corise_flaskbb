@@ -112,7 +112,7 @@ class TopicForm(FlaskForm):
 # you modify them?
 
 class SpecialTopicForm(TopicForm):
-    
+
     def __init__(self):
         TopicForm.title = "Title"
         TopicForm.content = "content"
