@@ -5,7 +5,10 @@ name: test
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main 
+      - 'feature/*'
+    
     paths-ignore:
       - 'docs/**'
       - 'flaskbb/themes/**'
