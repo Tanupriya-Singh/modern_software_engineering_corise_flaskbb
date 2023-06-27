@@ -5,7 +5,10 @@ name: test
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main 
+      - 'feature/*'
+    
     paths-ignore:
       - 'docs/**'
       - 'flaskbb/themes/**'
@@ -14,6 +17,12 @@ on:
       - '**/CHANGES'
       - '**/AUTHORS'
       - '**/LICENSE'
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+    
   # CoRise TODO: modify this workflow to run on each pull request
 
 jobs:
@@ -56,6 +65,9 @@ jobs:
         flaskbb translations compile
     
     # CoRise TODO: add another job to the workflow that will run flake8 and report any errors that were introduced in the proposed change
+    - name: FlaskBB checks
+      run: |
+        flake8 --count --quiet flaskbb/ --select=E9,F63,F7,F82 --exit-zero --statistics
         
     - name: Test with pytest
       run: |
