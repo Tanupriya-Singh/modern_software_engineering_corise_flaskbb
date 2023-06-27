@@ -19,7 +19,9 @@ on:
       - '**/LICENSE'
   pull_request:
     types:
-      opened
+      - opened
+      - reopened
+
     
   # CoRise TODO: modify this workflow to run on each pull request
 
