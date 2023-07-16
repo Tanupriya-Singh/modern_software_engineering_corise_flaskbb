@@ -9,7 +9,9 @@ on:
             - 'terraform/*'
             - '.github/workflows/terraform.yaml'
     pull_request:
-        branches: [ main ]
+        branches:
+        - main 
+        - 'feature/*'
         paths:
             - 'terraform/*'
             - '.github/workflows/terraform.yaml'
@@ -65,7 +67,5 @@ jobs:
         id: apply
         working-directory: ./terraform
         run: terraform apply
-
-
 
 
